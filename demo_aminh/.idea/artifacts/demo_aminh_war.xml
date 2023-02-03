@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="demo_aminh:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>demo_aminh</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="c0922-spring-thymeleaf-dashboard.war">
+      <element id="artifact" artifact-name="demo_aminh:war exploded" />
+    </root>
+  </artifact>
+</component>
