@@ -9,5 +9,5 @@ public interface IGeneralRepository<T> {
 
     void save(T t);
 
-    void remove(Long id);
+    void remove(T entity);
 }

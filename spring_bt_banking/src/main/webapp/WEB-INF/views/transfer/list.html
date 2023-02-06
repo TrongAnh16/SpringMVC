@@ -81,6 +81,7 @@
                             <div class="modal fade" id="add">
                                 <div class="modal-dialog">
                                     <form role="form" th:object="${transfer}" method="POST" th:action="@{/transfer/create}">
+                                        <th:block th:replace="/layout/notifications::errors"/>
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal"
@@ -96,7 +97,7 @@
                                                     <div class="box-body">
                                                         <div class="form-group">
                                                             <label>Sender Name</label>
-                                                            <select class="form-control" th:value="*{sender}" name="sender.id">
+                                                            <select class="form-control" th:value="*{sender}" name="sender.id" >
                                                                 <option value="0">--Select sender--</option>
                                                                 <th:block th:each="customer:${customers}">
                                                                     <option th:value="${customer.id}" th:text="${customer.full_name}"></option>
@@ -204,7 +205,7 @@
 <!-- ./wrapper -->
 
 <th:block th:replace="/layout/script :: script"/>
-<th:block th:replace="/layout/script::calculate-total-amount"/>
+<th:block th:replace="/layout/calculate_total_amount_script::calculate-total-amount"/>
 
 <!-- page script -->
 <script>

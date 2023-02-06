@@ -7,14 +7,13 @@
 </head>
 <body>
 <h1>Edit customer</h1>
-<th:block th:if="${message}">
-  <p th:text="${message}"></p>
-</th:block>
 <section class="content">
   <div class="row">
     <div class="col-xs-12">
       <div class="box">
+        <th:block th:replace="/layout/notifications::success(${message})"/>
         <form role="form" th:action="@{/edit-customer}" th:object="${customer}" method="post">
+          <th:block th:replace="/layout/notifications::errors"/>
           <input th:type="hidden" name="id" th:field="*{id}">
           <div class="modal-content">
             <div class="modal-header"><a href="/">
@@ -41,22 +40,12 @@
                            placeholder="Enter Created_by">
                   </div>
                   <div class="form-group">
-                    <label>Deleted</label>
-                    <input type="text" th:field="*{deleted}" class="form-control"
-                           placeholder="Enter Deleted">
-                  </div>
-                  <div class="form-group">
                     <label>Updated_at</label>
                     <input type="text" th:field="*{updated_at}" class="form-control" placeholder="Enter Updated_at">
                   </div>
                   <div class="form-group">
                     <label>Updated_by</label>
                     <input type="text" th:field="*{updated_by}" class="form-control" placeholder="Enter Updated_by">
-                  </div>
-                  <div class="form-group">
-                    <label>Deleted</label>
-                    <input type="text" th:field="*{deleted}" class="form-control"
-                           placeholder="Enter Deleted">
                   </div>
                   <div class="form-group">
                     <label>Full_name</label>

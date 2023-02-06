@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<th:block th:fragment="calculate-total-amount">
+  <script>
+    function calculateTotalAmount() {
+      let amount = Number(document.querySelector("[name='amount']").value);
+      let feeRate = Number(document.querySelector("[name='feeRate']").value);
+      let totalAmount = amount + amount * feeRate / 100;
+      document.querySelector("#totalAmount").value = totalAmount;
+    }
+    document.querySelector("[name='amount']").oninput = function (){
+      calculateTotalAmount()
+    };
+    document.querySelector("[name='feeRate']").oninput = function (){
+      calculateTotalAmount()
+    };
+  </script>
+</th:block>
+</html>

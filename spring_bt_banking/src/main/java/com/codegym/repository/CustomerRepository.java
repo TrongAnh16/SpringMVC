@@ -16,7 +16,7 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public List<Customer> findAll() {
-        TypedQuery<Customer> query = em.createQuery("select c from Customer c", Customer.class);
+        TypedQuery<Customer> query = em.createQuery("select c from Customer c where c.deleted=false", Customer.class);
         return query.getResultList();
     }
 
@@ -41,10 +41,7 @@ public class CustomerRepository implements ICustomerRepository {
     }
 
     @Override
-    public void remove(Long id) {
-        Customer customer = findById(id);
-        if (customer != null) {
-            em.remove(customer);
-        }
+    public void remove(Customer customer) {
+        em.merge(customer);
     }
 }

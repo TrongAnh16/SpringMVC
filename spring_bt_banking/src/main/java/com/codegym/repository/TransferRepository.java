@@ -35,7 +35,7 @@ public class TransferRepository implements ITransferRepository{
     }
 
     @Override
-    public void remove(Long id) {
+    public void remove(Transfer id) {
 
     }
 

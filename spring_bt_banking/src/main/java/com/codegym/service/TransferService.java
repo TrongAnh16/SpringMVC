@@ -25,7 +25,7 @@ public class TransferService implements ITransferService{
     }
 
     @Override
-    public void remove(Long id) {
+    public void remove(Transfer id) {
 
     }
 

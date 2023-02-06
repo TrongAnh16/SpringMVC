@@ -1,5 +1,10 @@
 package com.codegym.model;
 
+
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
 import java.security.Timestamp;
 
@@ -15,10 +20,16 @@ public class Customer {
     private boolean deleted;
     private String updated_at;
     private String updated_by;
+
+    @NotBlank(message = "Customer cannot be blank")
     private String full_name;
     private double balance;
+    @NotBlank(message = "Email cannot be blank")
+    @Email(message = "Email is not valid")
     private String email;
+    @NotBlank(message = "Address cannot be blank")
     private String address;
+    @NotBlank(message = "Phone cannot be blank")
     private String phone;
 
     public Customer() {}

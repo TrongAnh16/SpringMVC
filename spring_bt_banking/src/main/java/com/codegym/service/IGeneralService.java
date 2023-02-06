@@ -9,5 +9,6 @@ public interface IGeneralService<T> {
 
     void save(T t);
 
-    void remove(Long id);
+    //đưa entity vào để khi xóa customer sẽ chuyển deleted sang true, sẽ ko xóa dữu liệu.
+    void remove(T entity);
 }

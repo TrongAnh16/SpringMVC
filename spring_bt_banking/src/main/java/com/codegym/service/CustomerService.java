@@ -26,7 +26,7 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public void remove(Long id) {
-        customerRepository.remove(id);
+    public void remove(Customer customer) {
+        customerRepository.remove(customer);
     }
 }

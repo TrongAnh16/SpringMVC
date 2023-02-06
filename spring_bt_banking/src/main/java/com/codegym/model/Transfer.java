@@ -1,6 +1,10 @@
 package com.codegym.model;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.Range;
+
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 
 @Entity
 @Table(name = "transfers")
@@ -16,8 +20,9 @@ public class Transfer {
     @ManyToOne()
     @PrimaryKeyJoinColumn(name = "recipientID", foreignKey = @ForeignKey(name = "fk_recipientID"))
     private Customer recipient;
-
+    @Range(max = 999999999, min = 0)
     private double amount;
+    @Range(max = 50, min = 0 )
     private double feeRate;
     private double feeAmount;
     private double totalAmount;

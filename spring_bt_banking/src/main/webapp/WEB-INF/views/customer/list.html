@@ -152,7 +152,7 @@
                     <td th:text="${item.phone}"></td>
                     <td align="center">
                       <a th:href="@{/edit-customer/__${item.id}__ }"><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit"><i class="fa fa-pencil"></i></button></a>
-                      <a th:href="@{/delete-customer/__${item.id}__ }"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
+                      <a onclick="return confirm('Are you sure?')" th:href="@{/delete-customer/__${item.id}__ }"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
                     </td>
                   </tr>
                 </th:block>

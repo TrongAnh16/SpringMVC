@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<th:block th:fragment="success(message)">
+    <th:block th:if="${message!=null}">
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                    aria-hidden="true">×</span></button>
+            <strong>Success!</strong> <span th:text="${message}"></span>
+        </div>
+        <script>
+            window.onload = function() {
+                setTimeout(()=>{
+                    $(".alert-success").alert("close")
+                },3000)
+            }
+        </script>
+    </th:block>
+</th:block>
+
+<th:block th:fragment="errors">
+    <th:block th:if="${#fields.hasErrors()}">
+       <th:block th:each="err:${#fields.allDetailedErrors()}" >
+           <div class="alert alert-danger alert-dismissible" role="alert">
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                       aria-hidden="true">×</span></button>
+               <strong>Error!</strong> <span th:text="${err.getMessage()}"></span>
+           </div>
+       </th:block>
+        <script>
+            window.onload = function() {
+                let alEl = $(".alert-danger");
+                setTimeout(()=>{
+                    alEl.alert("close")
+                },3000)
+            }
+        </script>
+    </th:block>
+</th:block>
+</html>
