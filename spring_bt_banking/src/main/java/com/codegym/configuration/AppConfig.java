@@ -2,8 +2,12 @@ package com.codegym.configuration;
 
 import com.codegym.repository.CustomerRepository;
 import com.codegym.repository.ICustomerRepository;
+import com.codegym.repository.ITransferRepository;
+import com.codegym.repository.TransferRepository;
 import com.codegym.service.CustomerService;
 import com.codegym.service.ICustomerService;
+import com.codegym.service.ITransferService;
+import com.codegym.service.TransferService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -122,6 +126,16 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     @Bean
     public ICustomerService customerService() {
         return new CustomerService();
+    }
+
+    @Bean
+    public ITransferRepository transferRepository() {
+        return new TransferRepository();
+    }
+
+    @Bean
+    public ITransferService transferService() {
+        return new TransferService();
     }
 
     @Override

@@ -1,7 +1,11 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <th:block th:fragment="script">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha512-UDJtJXfzfsiPPgnI5S1000FPLBHMhvzAMX15I+qG2E2OAzC9P1JzUwJOfnypXiOH7MRPaqzhPbBGDNNj7zBfoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.min.js" integrity="sha512-i/6nAYMMwXZ3dTsq+ngdkSl4MbtVQF0FdCeqP5/1HSXPxyEd43vrxhafg1P4iqKRAnZVHn48GYaFUYRcTB0YrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"
+            integrity="sha512-UDJtJXfzfsiPPgnI5S1000FPLBHMhvzAMX15I+qG2E2OAzC9P1JzUwJOfnypXiOH7MRPaqzhPbBGDNNj7zBfoA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.min.js"
+            integrity="sha512-i/6nAYMMwXZ3dTsq+ngdkSl4MbtVQF0FdCeqP5/1HSXPxyEd43vrxhafg1P4iqKRAnZVHn48GYaFUYRcTB0YrQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- jQuery 3 -->
     <script src="/assets/bower_components/jquery/dist/jquery.js"></script>
     <!-- Bootstrap 3.3.7 -->
@@ -19,3 +23,21 @@
     <script src="/assets/dist/js/demo.js"></script>
 
 </th:block>
+
+<th:block th:fragment="calculate-total-amount">
+   <script>
+       function calculateTotalAmount() {
+           let amount = Number(document.querySelector("[name='amount']").value);
+           let feeRate = Number(document.querySelector("[name='feeRate']").value);
+           let totalAmount = amount + amount * feeRate / 100;
+           document.querySelector("#totalAmount").value = totalAmount;
+       }
+       document.querySelector("[name='amount']").oninput = function (){
+           calculateTotalAmount()
+       };
+       document.querySelector("[name='feeRate']").oninput = function (){
+           calculateTotalAmount()
+       };
+   </script>
+</th:block>
+</html>

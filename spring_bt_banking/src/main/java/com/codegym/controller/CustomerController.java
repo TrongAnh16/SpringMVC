@@ -18,16 +18,16 @@ public class CustomerController {
     @Autowired
     private ICustomerService customerService;
 
-    @GetMapping("/")
-    public ModelAndView showLoginPage() {
-        ModelAndView modelAndView = new ModelAndView("/customer/index");
-        return modelAndView;
-    }
-    @GetMapping("/home")
-    public ModelAndView showHomePage() {
-        ModelAndView modelAndView = new ModelAndView("/customer/review");
-        return modelAndView;
-    }
+//    @GetMapping("/")
+//    public ModelAndView showLoginPage() {
+//        ModelAndView modelAndView = new ModelAndView("/customer/index");
+//        return modelAndView;
+//    }
+//    @GetMapping("/home")
+//    public ModelAndView showHomePage() {
+//        ModelAndView modelAndView = new ModelAndView("/customer/review");
+//        return modelAndView;
+//    }
 
     @GetMapping("/create-customer")
     public ModelAndView showCreateForm() {
@@ -45,7 +45,7 @@ public class CustomerController {
         return modelAndView;
     }
 
-    @GetMapping("/customers")
+    @GetMapping("/")
     public ModelAndView listCustomers() {
         List<Customer> customers = customerService.findAll();
         ModelAndView modelAndView = new ModelAndView("/customer/list");

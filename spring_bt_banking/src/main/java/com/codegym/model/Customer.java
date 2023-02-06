@@ -12,18 +12,18 @@ public class Customer {
     private Long id;
     private String created_at;
     private String created_by;
-    private String deleted;
+    private boolean deleted;
     private String updated_at;
     private String updated_by;
     private String full_name;
-    private int balance;
+    private double balance;
     private String email;
     private String address;
     private String phone;
 
     public Customer() {}
 
-    public Customer(Long id, String created_at, String created_by, String deleted, String updated_at, String updated_by, String full_name, int balance, String email, String address, String phone) {
+    public Customer(Long id, String created_at, String created_by, boolean deleted, String updated_at, String updated_by, String full_name, double balance, String email, String address, String phone) {
         this.id = id;
         this.created_at = created_at;
         this.created_by = created_by;
@@ -33,6 +33,8 @@ public class Customer {
         this.full_name = full_name;
         this.balance = balance;
         this.email = email;
+        this.address = address;
+        this.phone = phone;
     }
 
     @Override
@@ -76,11 +78,11 @@ public class Customer {
         this.created_by = created_by;
     }
 
-    public String getDeleted() {
+    public boolean getDeleted() {
         return deleted;
     }
 
-    public void setDeleted(String deleted) {
+    public void setDeleted(boolean deleted) {
         this.deleted = deleted;
     }
 
@@ -108,11 +110,11 @@ public class Customer {
         this.full_name = full_name;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 

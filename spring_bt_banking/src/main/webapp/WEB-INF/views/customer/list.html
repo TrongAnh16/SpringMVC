@@ -9,7 +9,7 @@
   <header class="main-header">
     <title>List Customers</title>
     <!-- Logo -->
-    <a href="customers" class="logo">
+    <a href="/" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b><i class="fa fa-cab"></i></b></span>
       <!-- logo for regular state and mobile devices -->
@@ -146,7 +146,7 @@
                     <td th:text="${item.updated_at}"></td>
                     <td th:text="${item.updated_by}"></td>
                     <td th:text="${item.full_name}"></td>
-                    <td th:number="${item.balance}"></td>
+                    <td th:text="${item.balance}"></td>
                     <td th:text="${item.email}"></td>
                     <td th:text="${item.address}"></td>
                     <td th:text="${item.phone}"></td>
